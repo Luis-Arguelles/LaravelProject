@@ -23,7 +23,6 @@ class EleveController extends Controller
 
         $eleve->numeroEtuidiant = $request->numeroEtuidiant;
  
-        $eleve->email = $request->email;
 
         $eleve->email = $request->email;
 

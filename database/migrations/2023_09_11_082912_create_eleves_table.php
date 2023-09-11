@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('eleves', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('dateNaissance');
+            $table->string('numeroEtuidiant');
+            $table->string('email');
+            $table->string('image');
         });
     }
 
