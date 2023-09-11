@@ -12,24 +12,29 @@ class EleveController extends Controller
     public function store(Request $request): RedirectResponse
     {
         // Validate the request...
+        Eleve::create([
+        'nom' =>$request->nom,
+
+        'premom' =>$request->premom,
+
+        'dateNaissance' =>$request->dateNaissance,
+
+        'numeroEtuidiant' =>$request->numeroEtuidiant,
  
-        $eleve = new Eleve;
+        'email' => $request->email,
+
+        'image' => $request->image
+        ]);
  
-        $eleve->nom = $request->nom;
+        return "Succes";
+    }
 
-        $eleve->premom = $request->premom;
-
-        $eleve->dateNaissance = $request->dateNaissance;
-
-        $eleve->numeroEtuidiant = $request->numeroEtuidiant;
- 
-
-        $eleve->email = $request->email;
-
-        $eleve->image = $request->image;
-
-        $eleve->save();
- 
-        return redirect('/eleve');
+    public function create(){
+        return view('eleves.create');
     }
 }
+
+
+
+
+

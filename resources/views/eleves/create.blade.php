@@ -6,8 +6,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" class = "form-creationEleve">
-
+    <form action="/eleves" methode="POST" class = "form-creationEleve">
+        @csrf
         <div class = "form-creationEleve">
             <label for="nom">Entrez le nom:</label>
             <input type="text" name = "nom">
