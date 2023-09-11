@@ -11,7 +11,6 @@ class EleveController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        // Validate the request...
         Eleve::create([
         'nom' =>$request->nom,
 
@@ -25,8 +24,7 @@ class EleveController extends Controller
 
         'image' => $request->image
         ]);
- 
-        return "Succes";
+        return redirect('/eleves');
     }
 
     public function create(){
