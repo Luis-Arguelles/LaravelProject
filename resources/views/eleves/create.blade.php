@@ -40,7 +40,7 @@
         </div>
 
         <div class = "form-creationEleve">
-            <input type="submit" value="Subscribe!" />
+            <input type="submit" value="bouton" />
         </div>
 
     </form>
