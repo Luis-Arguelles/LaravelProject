@@ -42,6 +42,13 @@ class EleveController extends Controller
     public function create(){
         return view('eleves.create');
     }
+
+    public function destroy($id){
+
+        Eleve::destroy($id);
+        return redirect('/eleves');
+        
+    }
     
 }
 

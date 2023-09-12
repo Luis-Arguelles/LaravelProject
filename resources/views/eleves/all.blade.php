@@ -30,6 +30,10 @@
                     <td>
                         Img
                     </td>
+
+                    <td>
+                        Delete
+                    </td>
                 </tr>
             </th>
             @foreach ($results as $result)
@@ -51,6 +55,13 @@
                 </td>
                 <td>
                     {{$result->image}}
+                </td>
+                <td>
+                    <form action="/eleves/{{$result->id}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                </form>
                 </td>
             </tr>
                 @endforeach
