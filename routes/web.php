@@ -18,7 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('/eleves',[EleveController::class,'create']);
-Route::post('/eleves',[EleveController::class,'store']);
-
+Route::resource('eleves', EleveController::class);
