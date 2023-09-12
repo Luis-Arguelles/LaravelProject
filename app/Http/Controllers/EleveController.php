@@ -71,6 +71,11 @@ class EleveController extends Controller
 
         return redirect('/eleves');
     }
+
+    public function show($id){
+        $eleve = Eleve::find($id);
+        return view('eleves.show')->with('eleve',$eleve);
+    }
     
 }
 

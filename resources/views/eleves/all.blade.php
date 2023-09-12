@@ -75,6 +75,13 @@
                         <button type="submit" >Modifier</button>
                     </form>
                 </td>
+                <td>
+                    <form action="/eleves/{{$result->id}}" method="POST">
+                        @csrf
+                        @method('Get')
+                        <button type="submit" >Afficher</button>
+                    </form>
+                </td>
             </tr>
                 @endforeach
         </table>
