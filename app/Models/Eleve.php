@@ -9,5 +9,5 @@ class Eleve extends Model
 {
 
     protected $primaryKey = 'id';
-    protected $fillable = ['nom','premom','dateNaissance','numeroEtuidiant','email','image'];
+    protected $fillable = ['nom','prenom','dateNaissance','numeroEtudiant','email','image'];
 }

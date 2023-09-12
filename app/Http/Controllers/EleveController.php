@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use App\Models\Eleve;
+use Illuminate\Support\Facades\Validator; 
 
 class EleveController extends Controller
 {
@@ -11,14 +14,20 @@ class EleveController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:eleves,email'
+            ]);
+        if ($validator->fails()) {
+            return redirect() ->back() ->withErrors($validator) ->withInput();
+        }
         Eleve::create([
-        'nom' =>$request->nom,
+        'nom' => $request->nom,
 
-        'premom' =>$request->premom,
+        'prenom' => $request->prenom,
 
-        'dateNaissance' =>$request->dateNaissance,
+        'dateNaissance' => $request->dateNaissance,
 
-        'numeroEtuidiant' =>$request->numeroEtuidiant,
+        'numeroEtudiant' => $request->numeroEtudiant,
  
         'email' => $request->email,
 
@@ -26,10 +35,11 @@ class EleveController extends Controller
         ]);
         return redirect('/eleves');
     }
-
+    
     public function create(){
         return view('eleves.create');
     }
+    
 }
 
 

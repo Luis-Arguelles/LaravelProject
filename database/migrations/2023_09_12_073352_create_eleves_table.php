@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('nom');
             $table->string('prenom');
             $table->string('dateNaissance');
-            $table->string('numeroEtuidiant');
+            $table->string('numeroEtudiant');
             $table->string('email');
             $table->string('image');
         });
