@@ -35,7 +35,10 @@ class EleveController extends Controller
         ]);
         return redirect('/eleves');
     }
-    
+    public function index(){
+        $results = Eleve::paginate(10);
+        return view('eleves.all')->with('results',$results);
+    }
     public function create(){
         return view('eleves.create');
     }
