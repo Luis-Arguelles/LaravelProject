@@ -27,8 +27,6 @@
             <input type="text" id="image" name="image" required><br><br>
     
             <input type="submit" value="Soumettre">
-        </form>
-    
     </form>
 </body>
 </html>

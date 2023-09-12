@@ -49,6 +49,28 @@ class EleveController extends Controller
         return redirect('/eleves');
         
     }
+    public function edit($id){
+        $eleve = Eleve::find($id);
+        return view('eleves.edit')->with('eleve',$eleve);
+    }
+    public function update(Request $request, $id): RedirectResponse
+    {
+        $eleve = Eleve::find($id);
+        $rules = [
+            'nom' => 'required|string|max:255',
+            'prenom' => 'required|string|max:255',
+            'dateNaissance' => 'required|date',
+            'numeroEtudiant' => 'required|string|max:255',
+        ];
+
+        // Perform validation
+        $validatedData = $request->validate($rules);
+
+        // Update the student's data
+        $eleve->update($validatedData);
+
+        return redirect('/eleves');
+    }
     
 }
 

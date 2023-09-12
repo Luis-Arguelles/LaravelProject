@@ -30,9 +30,14 @@
                     <td>
                         Img
                     </td>
-
                     <td>
                         Delete
+                    </td>
+                    <td>
+                        Modifier
+                    </td>
+                    <td>
+                        Afficher
                     </td>
                 </tr>
             </th>
@@ -60,8 +65,15 @@
                     <form action="/eleves/{{$result->id}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
-                </form>
+                        <button type="submit" >Supprimer</button>
+                    </form>
+                </td>
+                <td>
+                    <form action="/eleves/{{$result->id}}/edit" method="POST">
+                        @csrf
+                        @method('Get')
+                        <button type="submit" >Modifier</button>
+                    </form>
                 </td>
             </tr>
                 @endforeach
