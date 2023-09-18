@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EleveController;
+use App\Http\Controllers\ModuleController;
 use Illuminate\Support\Facades\Route;
 
 /*
