@@ -19,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::resource('eleves', EleveController::class);
+
+Route::resource('modules', ModuleController::class);
