@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Evaluation extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['date', 'titre', 'coefficient', 'module_id'];
+
+    public function module()
+    {
+        return $this->belongsTo(Module::class);
+    }
 }
