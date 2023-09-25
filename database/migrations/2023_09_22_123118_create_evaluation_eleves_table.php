@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('evaluation', function (Blueprint $table) {
+        Schema::create('evaluation_eleves', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('titre');
-            $table->float('coefficient');
-            $table->unsignedBigInteger('modules_id')->unsigned();
-            $table->foreign('modules_id')->references('id')->on('modules');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('evaluation');
+        Schema::dropIfExists('evaluation_eleves');
     }
 };

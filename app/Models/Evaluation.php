@@ -11,8 +11,7 @@ class Evaluation extends Model
 
     protected $fillable = ['date', 'titre', 'coefficient', 'module_id'];
 
-    public function module()
-    {
+    public function module(){
         return $this->belongsTo(Module::class);
     }
 }

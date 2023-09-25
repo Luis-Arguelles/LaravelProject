@@ -61,6 +61,7 @@ class EleveController extends Controller
             'prenom' => 'required|string|max:255',
             'dateNaissance' => 'required|date',
             'numeroEtudiant' => 'required|string|max:255',
+            'email' => 'required|email'
         ];
 
         // Perform validation

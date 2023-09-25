@@ -22,7 +22,7 @@
             <label for="dateNaissance">Date de Naissance:</label>
             <input type="date" id="dateNaissance" name="dateNaissance" value="{{$eleve->dateNaissance}}" required><br><br>
     
-            <label for="mail">Adresse E-mail:</label>
+            <label for="email">Adresse E-mail:</label>
             <input type="text" id="email" name="email" value="{{$eleve->email}}" required><br><br>
     
             <label for="image">Image (type texte):</label>

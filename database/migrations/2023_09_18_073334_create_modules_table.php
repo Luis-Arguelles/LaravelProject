@@ -21,5 +21,6 @@ class CreateModulesTable extends Migration
     {
         Schema::dropIfExists('modules');
     }
+
 };
 

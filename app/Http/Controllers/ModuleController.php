@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Module;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -47,7 +48,7 @@ class ModuleController extends Controller
         $rules = [
             'nom' => 'required|string|max:255',
             'code' => 'required|string|max:255',
-            'coefficient' => 'required|float'
+            'coefficient' => 'required|numeric'
         ];
 
         // Perform validation
