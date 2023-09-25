@@ -10,5 +10,15 @@
    {{$evaluation->date}}
    {{$evaluation->titre}}
    {{$evaluation->coefficient}}
+</br>
+</br>
+</br>
+   @foreach($evaluation->evaluation_eleve as $notes)
+
+    <tr>
+        {{$notes->note}}
+    </tr>    
+
+   @endforeach
 </body>
 </html>
