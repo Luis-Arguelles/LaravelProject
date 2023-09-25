@@ -14,4 +14,8 @@ class Evaluation extends Model
     public function module(){
         return $this->belongsTo(Module::class);
     }
+
+    public function evaluation_eleve(){
+        return $this->hasMany(EvaluationEleve::class);
+    }
 }

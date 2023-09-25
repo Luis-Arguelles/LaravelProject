@@ -9,6 +9,16 @@ class EvaluationEleve extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['note'];
+    protected $fillable = ['note', 'evaluation_id', 'eleve_id'];
+
+    public function evaluation(){
+
+        return $this->belongsTo(Evaluation::class);
+    }
+
+    public function eleve(){
+
+        return $this->belongsTo(Eleve::class);
+    }
 
 }

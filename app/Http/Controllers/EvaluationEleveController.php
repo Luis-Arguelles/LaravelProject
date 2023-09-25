@@ -13,8 +13,8 @@ class EvaluationEleveController extends Controller
      */
     public function index()
     {
-        $results = EvaluationEleve::all();
-        return view('evaluationEleves.all')->with('results', $results);
+        $results = EvaluationEleve::paginate(10);
+        return view('evaluation_eleves.all')->with('results', $results);
     }
 
     /**
@@ -22,7 +22,7 @@ class EvaluationEleveController extends Controller
      */
     public function create()
     {
-        return view('evaluationEleves.create');
+        return view('evaluation_eleves.create');
     }
 
     /**
@@ -30,6 +30,17 @@ class EvaluationEleveController extends Controller
      */
     public function store(Request $request)
     {
+        $rules = [
+            'note' => 'required|numeric',
+            'evaluation_id'=> 'required|string',
+            'eleve_id'=> 'required|string'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        EvaluationEleve::create($validatedData);
+        
+        return redirect('/evaluation_eleves');
         
     }
 
@@ -38,7 +49,8 @@ class EvaluationEleveController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $evaluation_eleve = EvaluationEleve::find($id);
+        return view('evaluation_eleves.show')->with('evaluation_eleves', $evaluation_eleve);
     }
 
     /**
@@ -46,7 +58,8 @@ class EvaluationEleveController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $evaluation_eleve = EvaluationEleve::find($id);
+        return view('evaluation_eleves.edit')->with('evaluation_eleves', $evaluation_eleve);
     }
 
     /**
@@ -54,7 +67,19 @@ class EvaluationEleveController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $evaluation_eleve = EvaluationEleve::find($id);
+
+        $rules = [
+            'note' => 'required|numeric',
+            'evaluation_id'=> 'required|string',
+            'eleve_id'=> 'required|string'
+        ];
+
+        $validatedData = $request->validate($rules);
+
+        $evaluation_eleve->update($validatedData);
+        
+        return redirect('/evaluation_eleves');
     }
 
     /**
@@ -62,6 +87,7 @@ class EvaluationEleveController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        EvaluationEleve::destroy($id);
+        return redirect('/evaluation_eleves');
     }
 }

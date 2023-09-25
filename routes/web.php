@@ -5,6 +5,7 @@ use App\Http\Controllers\NoteController;
 use App\Http\Controllers\EleveController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\EvaluationEleveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,4 @@ Route::resource('evaluations', EvaluationController::class);
 
 Route::resource('notes', NoteController::class);
 
-Route::resource('evaluation_eleves', EvaluationEleve::class);
+Route::resource('evaluation_eleves', EvaluationEleveController::class);

@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('evaluation_eleves', function (Blueprint $table) {
             $table->id();
+            $table->float('note');
+            $table->foreignId('evaluation_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('eleve_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
