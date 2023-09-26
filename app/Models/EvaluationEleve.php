@@ -18,7 +18,7 @@ class EvaluationEleve extends Model
 
     public function eleve(){
 
-        return $this->belongsTo(Eleve::class);
+        return $this->hasOne(Eleve::class, 'id', 'eleve_id');
     }
 
 }

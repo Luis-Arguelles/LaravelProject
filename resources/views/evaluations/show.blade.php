@@ -20,5 +20,20 @@
     </tr>    
 
    @endforeach
+
+</br>
+</br>
+</br>
+   @foreach($evaluation->evaluation_eleve as $notes)
+
+    @if($notes->note < 10)
+
+
+    {{$notes->eleve->nom}} <br>
+
+    @endif
+  
+
+   @endforeach
 </body>
 </html>

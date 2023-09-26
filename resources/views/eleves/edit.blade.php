@@ -25,8 +25,7 @@
             <label for="email">Adresse E-mail:</label>
             <input type="text" id="email" name="email" value="{{$eleve->email}}" required><br><br>
     
-            <label for="image">Image (type texte):</label>
-            <input type="text" id="image" name="image" value="{{$eleve->image}}" required><br><br>
+            <input type="file" name="image">
     
             <input type="submit" value="Soumettre">
     </form>

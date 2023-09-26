@@ -12,7 +12,8 @@
    {{$eleve->prenom}}
    {{$eleve->dateNaissance}}
    {{$eleve->email}}
-   {{$eleve->image}}
+   
+   <img src="{{ asset('storage/' . $eleve->image) }}" alt="Image">
 
    <br>
    <br>

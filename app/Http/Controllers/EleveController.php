@@ -53,6 +53,8 @@ class EleveController extends Controller
         $eleve = Eleve::find($id);
         return view('eleves.edit')->with('eleve',$eleve);
     }
+
+    
     public function update(Request $request, $id): RedirectResponse
     {
         $eleve = Eleve::find($id);
@@ -61,13 +63,18 @@ class EleveController extends Controller
             'prenom' => 'required|string|max:255',
             'dateNaissance' => 'required|date',
             'numeroEtudiant' => 'required|string|max:255',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
         ];
 
-        // Perform validation
+        $imagePath = $request->file('image')->store('images', 'public');
+   
+        
         $validatedData = $request->validate($rules);
+        $validatedData["image"] = $imagePath;
+        
+       
 
-        // Update the student's data
         $eleve->update($validatedData);
 
         return redirect('/eleves');
