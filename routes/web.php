@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\NoteController;
+use App\Http\Controllers\EleveController;
+use App\Http\Controllers\ModuleController;
+use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\EvaluationEleveController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,4 +32,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::resource('eleves', EleveController::class);
+
+Route::resource('modules', ModuleController::class);
+
+Route::resource('evaluations', EvaluationController::class);
+
+Route::resource('notes', NoteController::class);
+
+Route::resource('evaluation_eleves', EvaluationEleveController::class);
 require __DIR__.'/auth.php';
