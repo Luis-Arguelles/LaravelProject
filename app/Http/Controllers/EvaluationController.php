@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Gate;
 use App\Models\Module;
 use App\Models\Evaluation;
 use Illuminate\Http\Request;
@@ -73,6 +74,10 @@ class EvaluationController extends Controller
      */
     public function update(Request $request, string $id)
     {
+
+        if (! Gate::allows('update-evaluation', auth()->user())) {
+            abort(403);
+        }
         $evaluation = Evaluation::find($id);
 
         $rules = [

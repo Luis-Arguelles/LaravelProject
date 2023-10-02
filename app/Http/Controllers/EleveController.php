@@ -57,6 +57,8 @@ class EleveController extends Controller
     
     public function update(Request $request, $id): RedirectResponse
     {
+
+        
         $eleve = Eleve::find($id);
         $rules = [
             'nom' => 'required|string|max:255',

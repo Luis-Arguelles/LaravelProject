@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Gate;
 use App\Models\Module;
 use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
@@ -44,6 +45,13 @@ class ModuleController extends Controller
     }
     public function update(Request $request, $id): RedirectResponse
     {
+
+       // $user = auth()->user();
+
+        if (! Gate::allows('update-module', auth()->user())) {
+            abort(403);
+        }
+
         $module = Module::find($id);
         $rules = [
             'nom' => 'required|string|max:255',
