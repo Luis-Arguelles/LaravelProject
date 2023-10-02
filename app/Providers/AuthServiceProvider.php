@@ -29,6 +29,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->prof === 1;
         });
 
+        Gate::define('update-eleve', function (User $user) {
+            return $user->prof === 1;
+        });
+
         Gate::define('update-evaluation', function (User $user) {
             return $user->prof === 1;
         });

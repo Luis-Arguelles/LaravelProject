@@ -39,7 +39,8 @@
    @endforeach
    <br>
    <br>
+   @if($indice !=0){
    {{$sumNotes /$indice}}
-
+   }@endif
 </body>
 </html>
