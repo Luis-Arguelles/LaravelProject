@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="http://localhost:8000/eleves/create">créé un eleve</a><br>
     <div>
         <table >
 

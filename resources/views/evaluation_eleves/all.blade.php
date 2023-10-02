@@ -7,6 +7,7 @@
     <title>Eveluation eleves</title>
 </head>
 <body>
+    <a href="http://localhost:8000/evaluation_eleves/create">créé</a><br>
     <div>
         <table >
 
